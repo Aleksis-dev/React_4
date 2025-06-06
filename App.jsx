@@ -1,11 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import RandomCat from './rcat';
 import "./App.css"
 
 function App() {
+  const [showChild, setShowChild] = useState(true);
   return (
     <>
       <h1>Hello world!</h1>
-      <ChildComponent />
+      <button onClick={() => setShowChild(prev => !prev)}>Toggle child</button>
+      { showChild && <ChildComponent />}
+      <RandomCat />
     </>
   )
 }
